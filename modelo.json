@@ -1,0 +1,82 @@
+{
+  "origens": {
+    "documento": "documentaçao tecnica retrofit.docx",
+    "pasta": "RETROFIT",
+    "planilha": "quadro_de_areas_pavimentos (1).xlsx",
+    "dimensoes_planta_m": [
+      32.5,
+      18.0
+    ]
+  },
+  "edificio": {
+    "pavimentos": [
+      {
+        "nome": "1º pavimento",
+        "area_bruta_m2": 585,
+        "area_mapeada_m2": 405.04,
+        "uso": "Recepção e coworking"
+      },
+      {
+        "nome": "2º pavimento",
+        "area_bruta_m2": 585,
+        "area_mapeada_m2": 403.76,
+        "uso": "Escritórios compactos",
+        "observacao": "Planilha diverge entre 40 e 42 unidades"
+      },
+      {
+        "nome": "3º pavimento",
+        "area_bruta_m2": 585,
+        "area_mapeada_m2": 433.55,
+        "uso": "10 lofts"
+      },
+      {
+        "nome": "4º pavimento",
+        "area_bruta_m2": 585,
+        "area_mapeada_m2": 432.74,
+        "uso": "5 studios e lounge"
+      },
+      {
+        "nome": "Cobertura",
+        "area_bruta_modelada_m2": 585,
+        "area_terraço_referencia_m2": 150,
+        "area_mapeada_m2": 254.86,
+        "uso": "Painéis FV, jardins e infraestrutura",
+        "observacao": "O modelo mostra a laje integral; terraço central de 150 m² inclui núcleo técnico."
+      }
+    ],
+    "tensao_V": "380/220 (premissa acadêmica)",
+    "frequencia_Hz": 60,
+    "carga_instalada_kW_documento": 220.5,
+    "areas_totais_divergentes_m2": {
+      "documentacao_tecnica": 4090,
+      "pdf_metricas": 2490,
+      "planilha_com_cobertura_integral": 2925
+    },
+    "ups_kVA_indicados": [
+      30,
+      40
+    ],
+    "protecao_diferencial_mA_indicada": 30,
+    "investimento_base_R$": 463800
+  },
+  "distribuicao_funcional": [
+    "Concessionária → QGBT",
+    "QGBT → QD-P01 a QD-P04, QD-COB e quadros técnicos",
+    "Rede ou gerador → ATS/QTA → QDE",
+    "QDE → UPS e bypass projetado → QD-UPS"
+  ],
+  "limites": [
+    "Áreas internas com estimativas por proporção da imagem (±10%); não substituem CAD cotado.",
+    "Plantas SKP consultadas como referência de pavimentos, mas a montagem tridimensional é esquemática e não reproduz diretamente a geometria nativa dos arquivos.",
+    "Sem levantamento completo de cargas, comprimentos de circuitos, dados de curto-circuito e estudo de seletividade; não definir cabos, correntes, tempos ou ajustes.",
+    "Posições do gerador, ATS, UPS, alimentadores e trajetos apresentadas de forma esquemática.",
+    "Cenários de falha são sequência didática qualitativa, não simulação eletrotécnica de transitórios ou proteção."
+  ],
+  "fontes_tecnicas_listadas_na_documentacao": [
+    "ABNT NBR 5410:2004, versão corrigida 2008 (referência da documentação; confirmar edição vigente no catálogo ABNT)",
+    "ABNT NBR 5419 (confirmar partes/edição vigente)",
+    "IEC 62040-1 e IEC 62040-3 (segurança e desempenho de UPS)",
+    "Cummins Power Generation, How to size a genset, Power Topic 7007 (2007)",
+    "Normas de conexão Enel Distribuição São Paulo"
+  ]
+}
