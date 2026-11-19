@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Edifício Vértice · Retrofit elétrico</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">V</span><div><b>VÉRTICE</b><small>RETROFIT ELÉTRICO · VISUALIZAÇÃO TÉCNICA</small></div></div>
+    <div class="top-meta"><span class="live-dot"></span><span>MODELO INTERATIVO</span><span class="divider"></span><span>BASE ACADÊMICA · 380/220 V · 60 Hz</span></div>
+    <button class="icon-btn" id="resetView" title="Restaurar vista">⟳ <span>VISTA INICIAL</span></button>
+  </header>
+  <main class="app-shell">
+    <aside class="rail panel">
+      <div class="section-kicker">NAVEGAÇÃO</div><h2>Pavimentos</h2>
+      <div id="floorList" class="floor-list"></div>
+      <div class="rail-divider"></div>
+      <div class="section-kicker">CAMADAS</div>
+      <label class="toggle-row"><span><i class="legend-dot energy"></i>Fluxo de energia</span><input id="energyToggle" type="checkbox" checked><em></em></label>
+      <label class="toggle-row"><span><i class="legend-dot protection"></i>Proteções</span><input id="protectionToggle" type="checkbox" checked><em></em></label>
+      <label class="toggle-row"><span><i class="legend-dot architecture"></i>Arquitetura</span><input id="architectureToggle" type="checkbox" checked><em></em></label>
+      <div class="rail-note"><b>Controles</b><span>Arraste para orbitar · roda para aproximar · clique em um pavimento para isolar.</span></div>
+    </aside>
+    <section class="viewport-wrap">
+      <div id="viewport" aria-label="Simulação 3D interativa do Edifício Vértice"></div>
+      <div class="viewport-chip"><span class="live-dot"></span><span id="viewLabel">VISTA GERAL · 5 NÍVEIS</span></div>
+      <div class="scale-chip"><span>32,50 m</span><span class="scale-line"></span><span>18,00 m</span></div>
+      <button class="view-cube" id="topView">⌖<small>PLANTA</small></button>
+      <div class="floor-tooltip" id="floorTooltip">Selecione um pavimento para ver seus dados.</div>
+    </section>
+    <aside class="inspector panel">
+      <div class="section-kicker">PAINEL TÉCNICO</div><div class="inspector-head"><h2 id="inspectTitle">Sistema elétrico</h2><span class="status-pill" id="statusPill">NORMAL</span></div>
+      <p class="muted" id="inspectSubtitle">Arquitetura funcional proposta para o retrofit.</p>
+      <div id="inspectContent"></div>
+      <div class="system-path"><div class="section-kicker">ARQUITETURA DE ENERGIA</div><div class="path-list" id="pathList"></div></div>
+      <div class="disclaimer"><span>i</span><p>Representação acadêmica. Posições internas e trajetos são esquemáticos; não usar para execução.</p></div>
+    </aside>
+  </main>
+  <footer class="bottom panel">
+    <div class="scenario-intro"><div class="section-kicker">CENÁRIOS INTERATIVOS</div><b>Teste a resposta do sistema</b><small>Sequências qualitativas para apresentação</small></div>
+    <div class="scenario-buttons">
+      <button class="scenario active" data-scenario="normal"><span class="scenario-icon">⌂</span><span><b>Operação normal</b><small>Rede alimenta a distribuição</small></span></button>
+      <button class="scenario" data-scenario="outage"><span class="scenario-icon">ϟ</span><span><b>Falta da rede</b><small>UPS sustenta; gerador assume via ATS</small></span></button>
+      <button class="scenario" data-scenario="branch"><span class="scenario-icon">⛨</span><span><b>Falha em circuito</b><small>Proteção setorial atua</small></span></button>
+      <button class="scenario" data-scenario="surge"><span class="scenario-icon">ϟ</span><span><b>Surto transitório</b><small>DPS indicado na proposta</small></span></button>
+    </div>
+    <div class="scenario-state"><span class="live-dot" id="scenarioDot"></span><b id="scenarioState">REDE NORMAL</b><small id="scenarioDetail">Fonte normal disponível · ATS em posição normal</small></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
